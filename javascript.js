@@ -18,42 +18,50 @@ Function that plays a single round of Rock Paper Scissors
     function singleRoundPlay(playerSelection, computerSelection) {
         // prompt player to select Rock, Paper, or Scissors
         // store player choice in variable playerSelection
-        playerSelection = prompt("Let's play Rock Paper Scissors. 1..2..3 Go! ");
+        playerSelection = prompt("Let's play Rock Paper Scissors. 1..2..3 Go! ").toLowerCase();
         // call function computerPlay()
         // store computerResult in variable computerSelection
         computerSelection = computerPlay();
         // compare playerSelection and computerSelection and store winner of the round in variable roundWinner
-        if (playerSelection === "Rock" && computerSelection === "Paper") {
+        if (playerSelection === "rock" && computerSelection === "Paper") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Lose! Paper beats Rock!!");
             roundWinner = "Computer";
-        } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+        } else if (playerSelection === "paper" && computerSelection === "Scissors") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Lose! Scissors beat Paper!!");
             roundWinner = "Computer";
-        } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        } else if (playerSelection === "scissors" && computerSelection === "Rock") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Lose! Rock beats Scissors!!");
             roundWinner = "Computer";
-        } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        } else if (playerSelection === "rock" && computerSelection === "Scissors") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Win! Rock beats Scissors!!");
             roundWinner = "Player";
-        } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        } else if (playerSelection === "paper" && computerSelection === "Rock") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Win! Paper beats Rock!!");
             roundWinner = "Player";
-        } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        } else if (playerSelection === "scissors" && computerSelection === "Paper") {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("You Win! Scissors beat Paper!!");
             roundWinner = "Player";
-        } else {
+        } else if (playerSelection === computerSelection.toLowerCase()) {
+            alert("You selected " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
             alert("Computer selected " + computerSelection);
             alert("It's a tie!");
             roundWinner = null;
+        } else {
+            alert("Unknown selection! \nPlease select either 'Rock', 'Paper', or 'Scissors.'");
+            roundWinner = undefined;
         }
         // return roundWinner
         return(roundWinner); 
         }
-
-    
