@@ -1,7 +1,7 @@
 /*
 Function that randomly returns either 'Rock', 'Paper' or 'Scissors'
 */
-// initialize 'computerPlay' function
+// initialize computerPlay() function
 function computerPlay() {
     // create array of Rock Paper Scissors options and store as computerOptions 
     computerOptions = ['Rock', 'Paper', 'Scissors'];
@@ -14,7 +14,7 @@ function computerPlay() {
 /*
 Function that plays a single round of Rock Paper Scissors
 */
-// initialize 'playRound' function that takes two arguments: playerSelection & computerSelection
+// initialize playRound() function that takes two arguments: playerSelection & computerSelection
 function playRound(playerSelection, computerSelection) {
     // compare playerSelection and computerSelection
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "Paper") {
@@ -70,23 +70,18 @@ function playRound(playerSelection, computerSelection) {
     }
 
 /*
-// prompt user input for player selection and store result in variable playerSelection
-const playerSelection = prompt("Let's play Rock Paper Scissors. Ready...Set...Go! ").toLowerCase();
-// call function computerPlay() and store result in variable computerSelection
-const computerSelection = computerPlay(); 
-// output playRound winner in the console   
-console.log(playRound(playerSelection, computerSelection));
-*/
-
-/*
 Function that plays 5 rounds of Rock Paper Scissors
 */
-// initialize 'game' function
-// set counter to 0
 // if counter is less than 5, call 'playRound' function
-// store function result to console.log
-// increase counter by 1
-// check if counter is less than 5
-// if less than 5, call 'playRound' function and repeat until counter is 5
-
-
+for (let i = 0; i < 5; i++) {
+    // initialize 'game' function
+    function game() {
+        // prompt user input for player selection and store result in variable playerSelection
+        const playerSelection = prompt("Let's play Rock Paper Scissors. Ready...Set...Go! ");
+        // call function computerPlay() and store result in variable computerSelection
+        const computerSelection = computerPlay(); 
+        // return result of function playRound()
+        return(playRound(playerSelection, computerSelection));
+        console.log(i);
+    }
+}
